@@ -32,6 +32,12 @@ class Ed11y {
         // 'table': false,
       },
 
+      // Disable all tests to make sure everything fails
+      // Add an item for each test hence matching test names based on localization file
+      enabledTests: {
+        
+      },
+
       // Set alertMode to "Assertive" to open the panel automatically if the issue count changes.
       // For CMS integrations, it is nice  switch between polite & headless based on whether the page was just edited.
       // alertMode "headless" never draws the panel.
