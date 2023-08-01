@@ -35,7 +35,23 @@ class Ed11y {
       // Disable all tests to make sure everything fails
       // Add an item for each test hence matching test names based on localization file
       enabledTests: {
-        
+        'embedVideo': true,
+        'embedAudio': true,
+        'embedVisualization': true,
+        'embedTwitter': true,
+        'embedCustom': true,
+        'blockquotes': true,
+        'imageAlt': true,
+        'linkedNewWindow': true,
+        'altEmptyLinked': true,
+        'linkDocument': true,
+        'error': true,
+        'textPossibleList': true,
+        'textPossibleHeading': true,
+        'textUppercase': true,
+        'tableNoHeaderCells': true,
+        'tableEmptyHeaderCells': true,
+        'tableContainsContentHeading': true,
       },
 
       // Set alertMode to "Assertive" to open the panel automatically if the issue count changes.
@@ -1379,7 +1395,7 @@ class Ed11y {
         let finder = Array.from(source);
         return finder.filter((el) => el.matches(selectors));
       } else {
-        return '';
+        return [];
       }
     };
 
