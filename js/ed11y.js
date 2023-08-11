@@ -345,8 +345,12 @@ class Ed11y {
         for (let i = Ed11y.results.length - 1; i >= 0; i--) {
           let test = Ed11y.results[i][1];
           let dismissKey = Ed11y.dismissalKey(Ed11y.results[i][4]);
+          if (test in testNames) {
+            //do JS here to drop the the result from the result array
+
+          }
           // We run the user provided dismissal key through the text sanitization to support legacy data with special characters.
-          if (dismissKey !== false && Ed11y.options.currentPage in Ed11y.dismissedAlerts && test in Ed11y.dismissedAlerts[Ed11y.options.currentPage] && dismissKey in Ed11y.dismissedAlerts[Ed11y.options.currentPage][test]) {
+          else if (dismissKey !== false && Ed11y.options.currentPage in Ed11y.dismissedAlerts && test in Ed11y.dismissedAlerts[Ed11y.options.currentPage] && dismissKey in Ed11y.dismissedAlerts[Ed11y.options.currentPage][test]) {
             // Remove result if it has been marked OK or ignored, increment dismissed match counter.
             Ed11y.dismissedCount++;
             Ed11y.results[i][5] = Ed11y.dismissedAlerts[Ed11y.options.currentPage][test][dismissKey];
